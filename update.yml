@@ -1,0 +1,8 @@
+---
+- name: Temel Sunucu Güncellemeleri
+  hosts: all
+  tasks:
+    - name: Ubuntu sistemler için apt önbelleğini güncelle
+      apt:
+        update_cache: yes
+      when: ansible_os_family == "Debian"
